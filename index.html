@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connected Minds Podcast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Connected Minds is a podcast where business, technology, and human stories meet — hosted by Ajay Chandran Jayachandrasekaran.">
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --accent: #22c55e;
+      --accent-soft: #bbf7d0;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    header {
+      padding: 80px 16px 56px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 16px;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    header p {
+      margin: 0 auto 24px;
+      max-width: 640px;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      font-weight: 500;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #022c22;
+      box-shadow: 0 18px 35px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 40px rgba(22, 163, 74, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    /* MAIN LAYOUT */
+    main {
+      padding: 0 16px 40px;
+    }
+
+    .shell {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    section p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .two-column {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* CARD */
+    .card {
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.14), transparent 55%);
+      border-radius: 20px;
+      border: 1px solid rgba(31, 41, 55, 0.85);
+      padding: 22px 20px 20px;
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .episode-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .episode-links {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .episode-links a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--accent-soft);
+      border-bottom: 1px solid rgba(187, 247, 208, 0.4);
+      padding-bottom: 2px;
+    }
+
+    /* LISTEN SECTION */
+    .listen-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 12px 0 0;
+    }
+
+    .listen-list li {
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 18px 16px 28px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.85);
+      margin-top: 32px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding-top: 96px;
+      }
+      header h1 {
+        font-size: 3.1rem;
+      }
+      .two-column {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-inner">
+      <div class="pill">🎙️ A podcast by Ajay Chandran Jayachandrasekaran</div>
+      <h1>Connected Minds</h1>
+      <p>
+        Conversations at the intersection of business, technology, and real human stories.  
+        Listen in as leaders, builders, and innovators unpack how ideas turn into impact.
+      </p>
+      <div class="buttons">
+        <a href="https://lnkd.in/gWEiA-dq" class="btn btn-primary">🎧 Listen on Spotify</a>
+        <a href="https://lnkd.in/gwEmX2BV" class="btn btn-secondary">🔴 Watch on YouTube</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+
+      <!-- ABOUT + HOST -->
+      <section>
+        <div class="two-column">
+          <div>
+            <h2>What is Connected Minds?</h2>
+            <p>
+              <strong>Connected Minds</strong> is a podcast created to explore how ideas become real-world outcomes.
+              Across domains like InsurTech, FinTech, Payments, and Connected Vehicles, one truth stands out:
+              there is never just one way to build or lead. Every culture, every team, every person brings a
+              different way of thinking.
+            </p>
+            <p>
+              Each episode dives into how people solve complex problems, work with AI, lead teams, and navigate
+              constant change — sharing lessons that are honest, practical, and grounded in experience.
+            </p>
+          </div>
+          <div>
+            <h2>Meet Your Host</h2>
+            <p>
+              Ajay Chandran Jayachandrasekaran is a technologist and product leader who has worked across India,
+              the United Kingdom, and Europe. His journey across multiple domains has shaped a simple belief:
+              innovation thrives when diverse minds connect.
+            </p>
+            <p>
+              <em>Connected Minds</em> is his way of bringing those conversations out into the open — so others can
+              listen, learn, and build with greater clarity and purpose.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED EPISODE -->
+      <section>
+        <h2>Featured Episode</h2>
+        <div class="card">
+          <div class="badge">Episode 1</div>
+          <h3>How AI is Transforming Product Management</h3>
+          <div class="episode-meta">
+            Guest: <strong>Priyanka Arora</strong>, Product Leader, Zuora Payments
+          </div>
+          <p>
+            In the debut episode, Priyanka walks through how product management has evolved — from coordination and delivery,
+            to data-driven growth, and now to AI-augmented decision-making. We talk about rapid prototyping, discovery,
+            working with global teams, and the skills modern PMs need to stay ahead.
+          </p>
+          <div class="episode-links">
+            <a href="https://lnkd.in/gWEiA-dq">🟢 Listen on Spotify</a>
+            <a href="https://lnkd.in/gwEmX2BV">🔴 Watch on YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTEN -->
+      <section>
+        <h2>Listen & Subscribe</h2>
+        <p>
+          Find <strong>Connected Minds</strong> on your favorite platform and subscribe so you never miss an episode.
+        </p>
+        <ul class="listen-list">
+          <li>🟢 Spotify – <a href="https://lnkd.in/gWEiA-dq">Listen here</a></li>
+          <li>🔴 YouTube – <a href="https://lnkd.in/gwEmX2BV">Watch here</a></li>
+        </ul>
+      </section>
+
+      <!-- STAY CONNECTED -->
+      <section>
+        <h2>Stay Connected</h2>
+        <p>
+          Follow Connected Minds on LinkedIn for new episodes, behind-the-scenes updates, and more.
+        </p>
+        <p>
+          👉 <a href="https://www.linkedin.com/company/theconnectedminds/" style="font-weight:600; text-decoration:none;">
+            Follow on LinkedIn
+          </a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    Connected Minds — When minds connect, ideas scale.
+  </footer>
+
+</body>
+</html>
